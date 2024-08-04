@@ -1,0 +1,18 @@
+app: first-app
+env: premium-wildflower
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.64.0
+values:
+  containerPort: 80
+  gitRepository: roelofb/expressjs-test-app
+  gitSha: '{{ .SHA }}'
+  image:
+    repository: nginx
+    tag: 1.19.3
+  imagePullSecrets: []
+  replicas: 2
+  resources:
+    ignoreLimits: true
